@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int[] E = new int[10]{0,1,2,3,4,5,6,7,8,9};
+		int[] D = new int[10];
+		string E_string = "";
+		string D_string = "";
+		
+		for(int i = 1; i<10; i++)
+		{
+			D[i-1] = E[E.Length - i];
+		}
+		
+		for(int z = 0; z<10; z++)
+		{
+			E_string += String.Format(Convert.ToString(E[z])+"-");
+			D_string += String.Format(Convert.ToString(D[z])+"-");
+		}
+		
+		Console.WriteLine("Matriz E :"+E_string);
+		Console.WriteLine("Matriz D :"+D_string);
+	}
+}

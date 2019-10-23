@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+
+
+    static void Main(string[] args)
+    {
+        string name = "";
+        int position = 0;
+
+        List<string> participantes = new List<string>();
+        List<double> tamanhos = new List<double>();
+
+
+        while (true)
+        {
+            Console.Clear();
+
+            Console.WriteLine(".....::::::CONCURSO:::::.....");
+
+            Console.WriteLine("Nome: ");
+            name = Console.ReadLine();
+            if (name == "SAIR") { break; }
+            participantes.Add(name);
+            Console.WriteLine("Altura: ");
+            tamanhos.Add(Convert.ToDouble(Console.ReadLine()));
+
+        }
+
+        for (int i =0; i<participantes.Count;i++)
+        {
+            if (tamanhos[i] > position)
+            {
+                position = i;
+            }
+
+        }
+
+        Console.WriteLine("\nVENCEDORA: {0}\nALTURA: {1}cm", participantes[position],tamanhos[position]);
+        Console.WriteLine("\n\n\nPressione qualquer tecla para sair...");
+        Console.ReadKey();
+    }
+}

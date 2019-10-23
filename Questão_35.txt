@@ -1,0 +1,37 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		while(true){
+			Console.Clear();
+			Console.WriteLine("....::::PERIMETRO DO TRIANGULO::::....\n");
+			double x = 0;
+			double y = 0;
+			double z = 0;
+
+			Console.WriteLine("X: ");
+			x = Convert.ToDouble(Console.ReadLine());
+
+			Console.WriteLine("Y: ");
+			y = Convert.ToDouble(Console.ReadLine());
+
+			Console.WriteLine("z: ");
+			z = Convert.ToDouble(Console.ReadLine());
+
+			if(x >y+z || y > x+z || z > x+y)
+			{
+				Console.WriteLine("\nVALORES INVÁLIDOS");
+				break;
+			}
+
+			else
+			{
+				Console.WriteLine("PERIMETRO: {0}",x+y+z);
+				Console.ReadLine();
+			}
+		}
+		
+	}
+}

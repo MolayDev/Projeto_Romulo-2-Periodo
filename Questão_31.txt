@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+		//nao e possivel excluir itens de vetores
+		
+		
+		
+		int[] vetor = new int[10]{0,1,2,3,4,5,6,7,8,9};
+		int remove_num;
+		Console.WriteLine("0,1,2,3,4,5,6,7,8,9\n");
+		while(true)
+		{
+			
+			Console.WriteLine("\n\nEXCLUIR: ");
+			remove_num = Convert.ToInt32(Console.ReadLine());
+	
+			for(int x = 0 ; x <= 9; x++)
+			{
+				if(vetor[x]==remove_num)
+				{
+					vetor[x]=-1;			
+				}
+			}		
+			Console.WriteLine();
+			for(int i = 0 ; i <= 9; i++)
+			{
+				if(vetor[i] >= 0)
+				{
+				Console.Write("{0} ",vetor[i]);
+				}
+			}
+			
+		}
+		Console.Clear();
+	}
+}

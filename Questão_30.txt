@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.Clear();
+		string[] nome = new string[6]{"Uva","Banana","Maçã","Melancia","Maracuja","Acerola"};
+		int[] qtd = new int[6]{100,100,100,100,100,100};
+		int[] qtd_vendida = new int[6]{0,0,0,0,0,0};
+		int[] min = new int[6]{10,10,10,10,10,10};
+		double[] valor = new double[6]{2.50,3.00,4.00,5.00,6.00,9.00};
+		double[] valor_vendido = new double[6]{0.00,0.00,0.00,0.00,0.00,0.00};
+		int compra_indice = 0;
+		int compra_quantidade = 0;
+		
+		
+		
+		while(true)
+		{
+			
+			for(int i = 0; i <= 5; i++)
+			{
+				Console.WriteLine(" [{3}] {2} - {1}                  {0}", nome[i],qtd[i],valor[i].ToString("C"),i+1);
+			}
+			try{
+				Console.WriteLine("\nPRODUTO:");
+				compra_indice = Convert.ToInt32(Console.ReadLine());
+				
+				if(compra_indice == 0)
+				{
+					break;
+				}
+				
+				Console.WriteLine("QUANTIDADE: ");
+				compra_quantidade = Convert.ToInt32(Console.ReadLine());
+
+				if( qtd[compra_indice-1] <= 0 || compra_quantidade > qtd[compra_indice-1])
+				{
+					Console.WriteLine("\n\nA COMPRA NÂO PODE SER FEITA \n VALOR DO ESTOQUE ZERADO \n\n");
+				}	
+
+				else
+				{
+					qtd[compra_indice-1] -= compra_quantidade;
+					qtd_vendida[compra_indice-1] += compra_quantidade;
+					valor_vendido[compra_indice-1] = compra_quantidade * valor[compra_indice-1];
+
+					Console.WriteLine("\n\nVENDIDO!\n{0}x de {1}\n\n", compra_quantidade, nome[compra_indice-1]);
+				}
+				}
+			catch(IndexOutOfRangeException e)
+			{
+				Console.WriteLine("\n\nERROR\n\nINDICE ERRADO\n\n");
+				//break;
+			}	
+			
+		}
+			Console.Clear();
+			Console.WriteLine("\n\n\nCAIXA\n\n");
+			for(int i = 0; i <= 5; i++)
+			{
+				
+				Console.WriteLine("[{0}]{1}",i+1,nome[i]);
+				Console.WriteLine("Vendido: {0} : {1} ", qtd_vendida[i], valor_vendido[i].ToString("C"));
+			}
+	}
+}

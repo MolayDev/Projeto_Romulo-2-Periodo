@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp33
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] manha = new double[5];
+            double[] tarde = new double[5];
+            string[] dia = new string[5] { "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA" };
+            double[] maior_manha = new double[2];
+            double[] maior_tarde = new double[2];
+            int turno = 0;
+
+            for (int i = 0; i<= 4;i++)
+            {
+                Console.Clear();
+                Console.WriteLine("DIA: {0}\n\n----FATURAMENTO TOTAL----", dia[i]);
+                Console.WriteLine("MANHÂ: ");
+                manha[i] = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("TARDE: ");
+                tarde[i] = Convert.ToDouble(Console.ReadLine());
+            }
+
+
+            for (int x = 0; x <= 4; x++)
+            {
+                if (manha[x]  > maior_manha[0])
+                {
+                    maior_manha[0] = manha[x];
+                    maior_manha[1] = x;
+                }
+                if (tarde[x] > maior_tarde[0])
+                {
+                    maior_tarde[0] = tarde[x];
+                    maior_tarde[1] = x;
+                }
+
+            }
+
+            if(maior_manha[0] > maior_tarde[0])
+            {
+                Console.WriteLine("\n\nMAIOR RENDIMENTO\n\nDIA: {0}\nTURNO: {1}\nVALOR: {2}",dia[Convert.ToInt32(maior_manha[1])],"MANHÂ", maior_manha[0]);
+            }
+            else
+            {
+                Console.WriteLine("\n\nMAIOR RENDIMENTO\n\nDIA: {0}\nTURNO: {1}\nVALOR: {2}", dia[Convert.ToInt32(maior_tarde[1])], "TARDE", maior_tarde[0]);
+            }
+
+
+            Console.WriteLine("\nPressione qualquer tecla para sair...");
+            Console.ReadKey();
+        }
+    }
+}

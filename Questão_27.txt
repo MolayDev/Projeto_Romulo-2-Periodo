@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int[] A = new int[6]{6,26,34,15,55,2};
+		int[] B = new int[10]{5,26,34,15,55,2,20,13,59,45};
+		int P = 0;
+		
+		for(int x = 0;x <= 5; x++)
+		{
+			for(int y = 0;y <= 9; y++)
+			{
+				if(A[x] == B[y])
+				{
+						P +=1;
+				}
+			}
+		}
+		
+		if(P == 4)
+		{
+			Console.WriteLine("Parabens! Você fez uma Quadra!");
+		}
+		
+		else if(P == 5)
+		{
+			Console.WriteLine("Parabens! Você fez uma Quina!");
+		}
+		else if (P == 6)
+		{
+			Console.WriteLine("Parabens! Você fez uma SENA!!!!");
+		}		
+		
+		else{Console.WriteLine("Você não acertou, tente outra vez!");}
+			
+	}
+}
