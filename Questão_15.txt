@@ -1,0 +1,32 @@
+/* 15. Num determinado Estado, para transferências de veículos, o DETRAN cobra uma taxa de
+1% para carros fabricados antes de 1990 e uma taxa de 1.5% para os fabricados de 1990
+em diante, taxa esta incidindo sobre o valor de tabela do carro. O algoritmo abaixo lê o
+ano e o preço do carro e a seguir calcula e imprime imposto a ser pago. */
+
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int ano = 0;
+    double preco = 0, imposto = 0;
+
+    //Leitura do ano do carro
+    Console.Write("Qual o ano do carro? ");
+    ano = int.Parse(Console.ReadLine());
+
+    //Valor do carro
+    Console.Write("Qual o preço do carro na tabela FIPE? R$");
+    preco = double.Parse(Console.ReadLine());
+
+    //Calculo do imposto
+    if (ano < 1990) {
+        imposto = preco * 0.01;
+    }
+    else if (ano >= 1990) {
+        imposto = preco * 0.015;
+    }
+
+    //Saida do resultado obtido
+    Console.Write($"O valor do imposto cobrado para mudar um veículo do ano de {ano} que custa {preco:c} de nome é de {imposto:c}.");
+  }
+}

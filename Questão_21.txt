@@ -1,0 +1,72 @@
+/* 21. Crie um programa em c# que leia um vetor de 10 alturas e elabore um algoritmo que
+permita calcular:
+A. A média das alturas;
+B. O desvio padrão das alturas. Lembrando que desvio padrão é dado por
+(Somatório(Alturas2)/número de alturas) – Média2;
+C. A moda das alturas. Lembrando que moda é o valor que maior incidência de
+repetições; */
+
+using System;
+using System.Collections.Generic;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int[] vetor = new int[10];
+
+    //Leitura das alturas
+    for(var i = 0; i <= 9; i++){
+      Console.Write("Digite a {0}ª Altura: ", i+1);
+      vetor[i] = int.Parse(Console.ReadLine());
+    }
+
+    //Calculo da media
+    var media = 0;
+    foreach(int iten in vetor){
+      media += iten;
+    }
+    media = media / 10;
+
+    //Saida do valor calculado da media
+    Console.WriteLine($"Média das altura calculadas: {media}. ");
+
+    //Calculo do desvio padrao
+    var desvio = 0.0;
+    var somatorio = 0.0;
+    foreach(int iten in vetor){
+      somatorio += Math.Pow((iten), 2);
+    }
+    desvio = (somatorio / 10) - Math.Pow(media, 2);
+
+    //Saida do valor calculado do desvio padrao
+    Console.WriteLine("Desvio padrâo das altura calculadas: {0:n2}. ", desvio);
+
+    //Adicionando numeros repetidos em uma lista.
+    HashSet<int> moda = new HashSet<int>();
+
+    var contador = 0;
+
+    foreach(int iten in vetor){
+      foreach(int iten2 in vetor){
+        if(iten == iten2){
+          contador++;
+          if (contador > 1){
+            moda.Add(iten);
+          }
+        }
+      }
+      contador = 0;
+    }
+
+    //Saida do resultado obtido 
+    if (moda.Count != 0) {
+      Console.Write("Os números moda são: ");
+      foreach(int item in moda) {
+        Console.Write(item + " ");
+      }
+    }
+    else {
+      Console.Write("Nenhum número é uma moda no conjunto.");
+    }
+    Console.ReadLine();
+  }
+}

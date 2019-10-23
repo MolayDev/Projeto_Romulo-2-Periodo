@@ -1,0 +1,61 @@
+/* Construa um algoritmo que calcule o peso ideal de uma pessoa. Dados de entrada: altura e
+   sexo. Fórmulas para cálculo do peso:
+   a. peso ideal de homem = (72,7 x altura) - 58
+   b. peso ideal da mulher = (62,1 x altura) - 44,7 */
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    //Criacao da instancia da classe Pessoa
+    Pessoa peso_ideal = new Pessoa();
+    //Validacao de dados da variável sexo
+    while(true) {
+      var aux = "";
+      Console.Write("Sexo da pessoa [M] MASCULINO  [F] FEMININO: ");
+      aux = Console.ReadLine();
+      if (aux.ToUpper() == "M") {
+        peso_ideal.Sexo = "MASCULINO";
+        break;
+      }
+      else if (aux.ToUpper() == "F") {
+        peso_ideal.Sexo = "FEMININO";
+        break;
+      }
+      else {
+        Console.Write("Valor inválido!");
+      }
+    }
+    //Leitura da variável altura
+    Console.Write("Digite a altura da pessoa: ");
+    peso_ideal.Altura = double.Parse(Console.ReadLine());
+    //Resultado obtido
+    Console.Write($"O peso ideal de uma pessoa do sexo {peso_ideal.Sexo} com {peso_ideal.Altura:n2} de altura é {peso_ideal.Resultado}.");
+
+  }
+}
+
+class Pessoa {
+  //Variáveis privadas da classe
+  private string sexo;
+  private double altura;
+  private double resultado(string sexo, double altura) {
+    if(sexo == "MASCULINO") {
+      return (72.7 * altura) - 58;
+    }
+    else {
+      return (62.1 * altura) - 44.7;
+    }
+  }
+  //Atributos da classe.
+  public string Sexo {
+    get { return sexo; }
+    set { sexo = value; }
+  }
+  public double Altura {
+    get { return altura; }
+    set { altura = value; }
+  }
+  public double Resultado {
+    get { return resultado(sexo, altura); }
+  }
+}

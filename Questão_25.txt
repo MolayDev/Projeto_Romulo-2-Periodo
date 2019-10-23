@@ -1,0 +1,32 @@
+/* 25. Ler um vetor que contenha as notas de uma turma de 10 alunos. Calcular a média da
+turma e contar quantos alunos obtiveram nota acima desta média calculada. Escrever a
+média da turma e o resultado da contagem. */
+
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    double[] notas = new double[10];
+
+		double media = 0;
+
+    //Leitura das notas de cada aluno
+		for(var i = 0; i < 10; i++){
+			Console.Write($"Digite a nota do {i + 1}º Aluno [0 a 10]: ");
+			notas[i] = double.Parse(Console.ReadLine()); 
+			media += notas[i];
+		}
+    //Dividindo o total de notas por 10 para pegar a média aritmética
+		media = media / 10;
+
+    //Computando quantos alunos tiraram a nota acima da média
+		var contador = 0;
+		foreach(double nota in notas){
+			if (nota > media){
+				contador ++;
+			}
+		}
+    //Saida do resultado obtido
+		Console.Write($"A média de nota dos 10 alunos foi {media:n2}, {contador} alunos tiraram a nota acima da média da turma.");
+  }
+}

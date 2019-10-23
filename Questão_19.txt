@@ -1,0 +1,83 @@
+/* 19. O cardápio de uma lanchonete é o seguinte:
+	Código        Descrição         Preço
+		100       Cachorro Quente     R$1,10
+		101       Bauru Simples       R$1,30
+		102       Bauru c/ovo         R$1,50
+		103       Hamburguer          R$1,10
+		104       Chesseburguer       R$1,30
+		105       Refrigerante        R$1,00
+Escrever um algoritmo que leia o código do item pedido, a quantidade e calcule o valor a
+ser pago por aquele lanche. Considere que a cada execução somente será calculado um
+item. */
+
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    while (true){
+			var codigo = 0; 
+			var quantidade = 0;
+			var valor = 0.0; 
+			var flag = 1;
+
+			Console.WriteLine("            Lanchonete IPESU          ");
+			Console.WriteLine("--------------------------------------");
+			Console.WriteLine("Código        Descrição         Preço");
+			Console.WriteLine(" 100       Cachorro Quente     R$1,10");
+			Console.WriteLine(" 101       Bauru Simples       R$1,30");
+			Console.WriteLine(" 102       Bauru c/ovo         R$1,50");
+			Console.WriteLine(" 103       Hamburguer          R$1,10");
+			Console.WriteLine(" 104       Chesseburguer       R$1,30");
+			Console.WriteLine(" 105       Refrigerante        R$1,00");
+			Console.WriteLine("--------------------------------------");
+      //Tratamento do valor digitado
+			while(true){	
+				Console.Write("Sua escolha [Código]: ");
+				codigo = int.Parse(Console.ReadLine());
+				if (codigo == 100 || codigo == 101 || codigo == 102 || codigo == 103 || codigo == 104 || codigo == 105){
+					break;
+				}
+			}
+      //Processamento do valor
+      if (codigo == 100){
+          valor = 1.10;
+      }
+      else if (codigo == 101) {
+        valor = 1.30;
+      }
+      else if (codigo == 102) {
+        valor = 1.50;
+      }
+      else if (codigo == 103) {
+        valor = 1.10;
+      }
+      else if (codigo == 104) {
+        valor = 1.30;
+      }
+      else if (codigo == 105) {
+        valor = 1;
+      }
+
+      //Processamento da quantidade do pedido
+			Console.Write("Quantidade: ");
+			quantidade = int.Parse(Console.ReadLine());	
+
+      //Saida do resultado
+			Console.WriteLine("O valor do pedido será {0:c}. ", valor * quantidade);
+      Console.WriteLine("--------------------------------------");
+
+      //Condicao de parada
+			do {
+				Console.Write("Deseja pedir novamente? [1] SIM [0] NÃO ");
+				flag = int.Parse(Console.ReadLine());
+				if (flag == 0 || flag == 1){
+					break;
+				}
+			} while(true);
+			Console.WriteLine("--------------------------------------");
+			if (flag == 0){
+				break;
+			}
+    }
+  }
+}

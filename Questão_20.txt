@@ -1,0 +1,33 @@
+/* 20. Crie um programa em c# que leia um vetor de 10 números inteiros e gere um segundo
+vetor (que deve ser impresso), cujas posições pares são o dobro do vetor original e as
+ímpares são o triplo. */
+using System;
+
+class MainClass {
+  static void Main(string[] args) {
+    int[] vetor = new int[10];
+
+    //Lendo os 10 primeiros números.
+    Console.WriteLine("Digite 10 números inteiros em sequencia: ");
+    for (var i = 0; i < 10; i++)
+        vetor[i] = int.Parse(Console.ReadLine());
+
+    //Criando novo vetor e adicionando novos valores
+    int[] novo_vetor = new int[10];
+    var contador = 0;
+    foreach (int iten in vetor) {
+        if (iten % 2 == 0) {
+            novo_vetor[contador] = (iten * 2);
+        }
+        else {
+            novo_vetor[contador] = (iten * 3);
+        }
+        contador++;
+    }
+    //Escrevendo resultado obtido.
+    Console.WriteLine("O resultado do novo vetor é: ");
+    foreach (int iten in novo_vetor)
+        Console.Write(iten + " ");
+    Console.ReadKey();
+  }
+}

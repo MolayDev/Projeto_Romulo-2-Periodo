@@ -1,0 +1,40 @@
+/* 18. Criar um programa para identificar o valor a ser pago por um plano de saúde dada a idade
+do conveniado considerando que todos pagam R$ 100 mais um adicional conforme a
+seguinte tabela: 1) crianças com menos de 10 anos pagam R$80; 2) conveniados com idade
+entre 10 e 30 anos pagam R$50; 3) conveniados com idade entre 40 e 60 anos pagam R$
+95; e 4) conveniados com mais de 60 anos pagam R$130. */
+
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int idade = 0, valor = 100;
+
+    //Validacao da idade digitada
+    while (true) {
+      Console.Write("Idade do conveniado: ");
+      idade = int.Parse(Console.ReadLine());
+      if (idade > 0) {
+        break;
+      }
+      Console.WriteLine("Valor inválido!");
+    }
+
+    //Calculo do valor do convenio
+    if (idade >= 0 && idade <= 9) {
+      valor += 80;
+    }
+    else if (idade >= 10 && idade <= 30) {
+      valor += 50;
+    }
+    else if (idade >= 40 && idade <= 60) {
+      valor += 95;
+    }
+    else if (idade > 60) {
+      valor += 130;
+    }
+
+    //Saida do resultado obtido
+    Console.Write($"Um conveniado de {idade} anos de idade pagará uma mensalidade de {valor:c} em seu plano de saúde.");
+  }
+}

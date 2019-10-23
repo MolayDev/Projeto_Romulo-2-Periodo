@@ -1,0 +1,61 @@
+/* 22. Construa um programa em c# que leia 2 vetores inteiros de 5 posições e apresente o
+conjunto União e o conjunto Intersecção dos vetores. */
+
+using System;
+using System.Collections.Generic;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int[] vetor1 = new int[5];
+		int[] vetor2 = new int[5];
+
+    //Leitura do primeiro vetor
+		for(var i = 0; i < 5; i++){
+			Console.Write($"Digite o {i + 1}ª valor da primeira lista: ");
+			vetor1[i] = int.Parse(Console.ReadLine());
+
+		}
+
+    //Leitura do segundo vetor
+    for(var i = 0; i < 5; i++){
+      Console.Write($"Digite o {i + 1}ª valor da segunda lista: ");
+			vetor2[i] = int.Parse(Console.ReadLine());
+    }
+    
+    //Uniao entre os dois vetores
+		List<int> uniao = new List<int>();
+
+		foreach(int valor in vetor1){
+			uniao.Add(valor);
+		}
+
+		foreach(int valor in vetor2){
+			uniao.Add(valor);
+		}
+
+    //Resultado da uniao entre os dois vetores
+		Console.Write("A uniao dos vetores 1 e 2 é: ");
+
+		foreach(int valor in uniao){
+			Console.Write(valor + " ");
+		}
+		Console.WriteLine();
+
+    //interseccao dos vetores
+		HashSet<int> interseccao = new HashSet<int>();
+
+		foreach(int valor in vetor1){
+			foreach(int valor2 in vetor2){
+				if(valor == valor2 && interseccao.Contains(valor) == false){
+					interseccao.Add(valor);
+				}
+			}
+		}
+    //Resultado da interseccao dos vetores
+		Console.Write("A intersecçâo dos vetores 1 e 2 é: ");
+
+		foreach(int valor in interseccao){
+			Console.Write(valor + " ");
+		}
+  }
+}

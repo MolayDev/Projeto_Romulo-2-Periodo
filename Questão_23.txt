@@ -1,0 +1,39 @@
+/* 23. Faça um programa que leia um vetor de 10 posições e crie um segundo vetor substituindo
+os valores negativos por 1. */
+
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    //Lendo primeiro vetor
+    int[] vetor = new int[10];
+		for(var i = 0; i < 10; i++){
+			Console.Write($"Adicione o {i + 1}º valor ao vetor: ");
+			vetor[i] = int.Parse(Console.ReadLine());
+		}
+
+    //Construindo segundo vetor
+		int[] vetor2 = new int[10];
+		foreach(int valor in vetor){
+			if(valor < 0){
+				vetor2[Array.IndexOf(vetor, valor)] = 1;
+			}
+			else{
+				vetor2[Array.IndexOf(vetor, valor)] = valor;
+			}
+		}
+
+    //Resultado do primeiro vetor
+		Console.Write("Primeiro vetor: ");
+		foreach(int valor in vetor){
+			Console.Write(valor + " ");
+		}
+		Console.WriteLine();
+
+    //Resultado do segundo vetor
+		Console.Write("Segundo vetor: ");
+		foreach(int valor in vetor2){
+			Console.Write(valor + " ");
+		}
+  }
+}

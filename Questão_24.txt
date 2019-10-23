@@ -1,0 +1,34 @@
+/* 24. Faça um programa que leia uma matriz mat 3 x 4 de inteiros, substitua seus elementos
+negativos por 0 e imprima a matriz mat original e a modificada. */
+
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+
+    //Leitura da matriz
+    int[,] mat = new int[3,4];
+
+		for(var y = 0; y < 3; y++){
+			for(var x = 0; x < 4; x++){
+				Console.Write("Digite o valor para Linha: {0} Coluna: {1} ", y+1, x+1);
+				var aux = 0;
+				aux = int.Parse(Console.ReadLine());
+				if (aux < 0){
+					mat[y, x] = 0;
+				}
+				else{
+					mat[y, x] = aux;
+				}
+			}
+		}
+    //Saida da matriz obtida
+		Console.WriteLine("A matriz será: ");
+		for(var y = 0; y < 3; y++){
+			for(var x = 0; x < 4; x++){
+				Console.Write(mat[y, x] + " ");
+			}
+			Console.WriteLine();
+		}
+  }
+}

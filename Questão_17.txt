@@ -1,0 +1,55 @@
+/* 17. Um banco concederá um crédito especial aos seus clientes, variável com o saldo médio no
+último ano. Faça um algoritmo que leia o saldo médio de um cliente e calcule o valor do
+crédito de acordo com a tabela abaixo. Mostre uma mensagem informando o saldo médio
+e o valor do crédito.
+Saldo médio		    Percentual
+de 0 a 200	  	nenhum crédito
+de 201 a 400		     20%
+de 401 a 600		     30%
+acima de 601		     40% */
+
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    //Instancia da classe
+    Banco credito = new Banco();
+
+    //Leitura do saldo médio do cliente
+    Console.Write("Saldo médio do cliente: R$");
+    credito.Saldo = double.Parse(Console.ReadLine());
+
+    //Saida do resultado obtido
+    Console.Write($"Um cliente com um saldo médio de {credito.Saldo:c} receberá {credito.Credito:c} de crédito.");
+  }
+}
+
+class Banco {
+  //Variáveis privadas da classe
+  private double credito;
+  private double saldo;
+  private double resultado() {
+    if (saldo >= 0 && saldo <= 200){
+        credito = 0;
+    }
+    else if (saldo >= 201 && saldo <= 400) {
+      credito = saldo * 0.20;
+    }
+    else if (saldo >= 401 && saldo <= 600) {
+      credito = saldo * 0.30;
+    }
+    else if (saldo > 600) {
+      credito = saldo * 0.40;
+    }
+    return credito;
+  }
+
+  //Atributos da classe Banco
+  public double Saldo {
+    get { return saldo; }
+    set { saldo = value; }
+  }
+  public double Credito {
+    get { return resultado(); }
+  }
+}

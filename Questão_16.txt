@@ -1,0 +1,48 @@
+/* 16. Uma empresa concederá um aumento de salário aos seus funcionários, variável de acordo
+com o cargo, conforme a tabela abaixo. Faça um algoritmo que leia o salário e o cargo de
+um funcionário e calcule o novo salário. Se o cargo do funcionário não estiver na tabela,
+ele deverá, então, receber 40% de aumento. Mostre o salário antigo, o novo salário e a
+diferença.
+Código		Cargo		Percentual
+101		Gerente		10%
+102		Engenheiro	20%
+103		Técnico		30% */
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    var salario = 0.0;
+    var novo_salario = 0.0;
+    var cargo = "";
+
+    //Leitura do salário de um funcionário
+    Console.Write("Salário do funcionário: R$");
+    salario = double.Parse(Console.ReadLine());
+
+    //Leitura do cargo do funcionário
+    Console.WriteLine("Código		Cargo		    Percentual");
+    Console.WriteLine(" 101      Gerente		 10%");
+    Console.WriteLine(" 102      Engenheiro	 20%");
+    Console.WriteLine(" 103      Técnico		 30%");
+    Console.WriteLine(" 104      Outros         40%");
+    Console.Write("Cargo: ");
+    cargo = Console.ReadLine();
+
+    //Calculo do salario
+    if (cargo == "101" || cargo.ToUpper() == "GERENTE") {
+      novo_salario = salario + salario * 0.10;
+    }
+    else if (cargo == "102" || cargo.ToUpper() == "ENGENHEIRO") {
+      novo_salario = salario + salario * 0.20;
+    }
+    else if (cargo == "103" || cargo.ToUpper() == "TECNICO") {
+      novo_salario = salario + salario * 0.30;
+    }
+    else if (cargo == "104" || cargo.ToUpper() == "OUTROS") {
+      novo_salario = salario + salario * 0.40;
+    }
+
+    //Saida do resultado obtido
+    Console.Write($"Um funcionário que recebia {salario:c} terá um aumento de {novo_salario - salario:c} e passará a receber {novo_salario:c}.");
+  }
+}

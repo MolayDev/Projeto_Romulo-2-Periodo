@@ -1,0 +1,45 @@
+/* 14. Faça um programa que receba a idade de um nadador e mostre a sua categoria usando as
+   regras a seguir:
+   Categoria    Idade
+   Infantil     5 a 7
+   Juvenil      8 a 10
+   Adolecente   11 a 15
+   Adulto       16 a 30  
+   Sênior       Acima de 30 */
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    var flag = 1;
+    do {
+      //Leitura da idade do nadador
+      int idade = 0;
+      Console.Write("Digite a idade do nadador: ");
+      idade = int.Parse(Console.ReadLine());
+
+      //Saida de dados de acordo com a tabela
+      if (idade >= 5 && idade <= 7) {
+        Console.WriteLine("A categoria do nadador é: Infantil! ");
+      }
+      else if (idade > 7 && idade <= 10) {
+          Console.WriteLine("A categoria do nadador é: Juvenil! ");
+      }
+      else if (idade > 10 && idade <= 15) {
+          Console.WriteLine("A categoria do nadador é: Adolecente! ");
+      }
+      else if (idade > 15 && idade <= 30) {
+          Console.WriteLine("A categoria do nadador é: Adulto! ");
+      }
+      else if (idade > 30) {
+          Console.WriteLine("A categoria do nadador é: Sênior! ");
+      }
+      else {
+          Console.WriteLine("Dados inválidos!");
+      }
+      
+      //Condicao de parada
+      Console.Write("Deseja repetir? [1] SIM [0] NÃO ");
+      flag = int.Parse(Console.ReadLine());
+    } while (flag != 0);
+  }
+}
