@@ -1,0 +1,1712 @@
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.Clear();
+
+        int option = 0;
+
+
+        //MENU
+        Console.WriteLine("Projeto – Linguagem de Programação Estruturada\n");
+        Console.WriteLine("Elaborar um programa em C# baseado nas questões abaixo:\n");
+        Console.WriteLine("         Fazer o uso dos assuntos vistos até o momento");
+        Console.WriteLine("         Elaborar Menu de acesso – Console Application – obrigatório");
+        Console.WriteLine("         Estruturar em métodos");
+        Console.WriteLine("         Criação de Classes no mínimo em 4 questões\n");
+
+
+        for (int i = 0; i < 35; i++)
+        {
+            if (i % 2 == 0)
+            {
+                if (i < 9) { Console.Write("[0{0}] - Questão", i + 1); }
+                else { Console.Write("[{0}] - Questão", i + 1); }
+
+            }
+            else
+            {
+                if (i < 9) { Console.WriteLine("              [0{0}] - Questão", i + 1); }
+                else { Console.WriteLine("              [{0}] - Questão", i + 1); }
+            }
+        }
+        Console.WriteLine("\n");
+        Console.Write(">>>");
+        option = Convert.ToInt32(Console.ReadLine());
+
+        if (option == 1) { Console.Clear(); Questao_1(); }; if (option == 2) { Console.Clear(); Questao_2(); }; if (option == 3) { Console.Clear(); Questao_3(); };
+        if (option == 4) { Console.Clear(); Questao_4(); }; if (option == 5) { Console.Clear(); Questao_5(); }; if (option == 6) { Console.Clear(); Questao_6(); };
+        if (option == 7) { Console.Clear(); Questao_7(); }; if (option == 8) { Console.Clear(); Questao_8(); }; if (option == 9) { Console.Clear(); Questao_9(); };
+        if (option == 10) { Console.Clear(); Questao_10(); }; if (option == 11) { Console.Clear(); Questao_11(); }; if (option == 12) { Console.Clear(); Questao_12(); };
+        if (option == 13) { Console.Clear(); Questao_13(); }; if (option == 14) { Console.Clear(); Questao_14(); }; if (option == 15) { Console.Clear(); Questao_15(); };
+        if (option == 16) { Console.Clear(); Questao_16(); }; if (option == 17) { Console.Clear(); Questao_17(); }; if (option == 18) { Console.Clear(); Questao_18(); };
+        if (option == 19) { Console.Clear(); Questao_19(); }; if (option == 20) { Console.Clear(); Questao_20(); }; if (option == 21) { Console.Clear(); Questao_21(); };
+        if (option == 22) { Console.Clear(); Questao_22(); }; if (option == 23) { Console.Clear(); Questao_23(); }; if (option == 24) { Console.Clear(); Questao_24(); };
+        if (option == 25) { Console.Clear(); Questao_25(); }; if (option == 26) { Console.Clear(); Questao_26(); }; if (option == 27) { Console.Clear(); Questao_27(); };
+        if (option == 28) { Console.Clear(); Questao_28(); }; if (option == 29) { Console.Clear(); Questao_29(); }; if (option == 30) { Console.Clear(); Questao_30(); };
+        if (option == 31) { Console.Clear(); Questao_31(); }; if (option == 32) { Console.Clear(); Questao_32(); }; if (option == 33) { Console.Clear(); Questao_33(); };
+        if (option == 34) { Console.Clear(); Questao_34(); }; if (option == 35) { Console.Clear(); Questao_35(); }
+
+        else
+        {
+            Console.WriteLine("ERRO");
+            Main();
+        };
+    }
+
+    public static void Questao_1()
+    {
+        /*
+         1. Escrever um algoritmo que leia o nome e as três notas obtidas por um aluno durante o semestre. Calcular a sua média (aritmética), 
+         informar o nome e sua menção aprovado (media >= 7), Reprovado (media <= 5) e Recuperação (media entre 5.1 a 6.9).
+         */
+
+
+        Console.WriteLine("1. Escrever um algoritmo que leia o nome e as três notas obtidas por um aluno durante o semestre.\nCalcular a sua média (aritmética), informar o nome e sua menção aprovado (media >= 7),\nReprovado (media <= 5) e Recuperação (media entre 5.1 a 6.9).\n\n");
+
+        /////////Declaração de variáveis///////////
+        double nota_1, nota_2, nota_3, media;
+        string nome_1;
+        ///////////////////////////////////////////
+
+        /////Solicitação e leitura das variáveis//////
+
+        Console.Write("Digite seu nome: ");
+        nome_1 = Console.ReadLine();
+
+        Console.Write("Digite a sua primeira nota: ");
+        nota_1 = double.Parse(Console.ReadLine());
+
+        Console.Write("Digite a sua segunda nota: ");
+        nota_2 = double.Parse(Console.ReadLine());
+
+        Console.Write("Digite a sua terceira nota: ");
+        nota_3 = double.Parse(Console.ReadLine());
+        ///////////////////////////////////////////////
+
+
+        /////////////Cálculo da média//////////////////
+
+        media = ((nota_1 + nota_2 + nota_3) / 3);
+        //////////////////////////////////////////////
+
+
+        ////////////////Mostrando na tela os resultados////////////////////////
+
+        Console.WriteLine($"Olá {nome_1} sua média é igual a: {media}");
+
+        if (media >= 7)
+        {
+            Console.WriteLine($"Olá, {nome_1}. Você foi aprovado!");
+        }
+        else if (media >= 5.1 && media <= 6.9)
+        {
+            Console.WriteLine($"Olá, {nome_1}. Você está em recuperação!");
+        }
+        else if (media <= 5)
+        {
+            Console.WriteLine($"Olá, {nome_1}. Você foi reprovado!");
+        }
+        ////////////////////////////////////////////////////////////////////////
+
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_2()
+    {
+        /*
+         * 2. Escrever um algoritmo que leia dois valores inteiros distintos e informe qual é o maior.
+         */
+
+
+        Console.WriteLine("2. Escrever um algoritmo que leia dois valores inteiros distintos e informe qual é o maior.\n\n");
+
+        //Declaração de Variáveis
+        int n_1, n_2;
+        string result_1;
+
+        Console.Write("Digite o primeiro valor: ");
+        n_1 = int.Parse(Console.ReadLine());
+
+        Console.Write("Digite o segundo valor: ");
+        n_2 = int.Parse(Console.ReadLine());
+
+        if (n_1 > n_2)
+        {
+            Console.WriteLine($"O número maior é: {n_1}");
+        }
+        else if (n_1 < n_2)
+        {
+            Console.WriteLine($"O número maior é: {n_2}");
+        }
+        else if (n_1 == n_2 && n_2 == n_1)
+        {
+            Console.WriteLine("Os números são iguais.");
+        }
+
+        Console.WriteLine();
+        Main();
+    }
+    public static void Questao_3()
+    {
+
+
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_4()
+    {
+        /*
+         * 3. Elabore um algoritmo que leia do teclado o sexo de uma pessoa. Se o sexo digitado for M ou F,
+         * escrever na tela “Sexo válido!”. Caso contrário, informar “Sexo inválido!”
+         */
+
+
+        Console.WriteLine("3. Elabore um algoritmo que leia do teclado o sexo de uma pessoa. Se o sexo digitado for M ou F,\nescrever na tela “Sexo válido!”. Caso contrário, informar “Sexo inválido!”\n\n");
+
+        //Declaração de Variáveis
+        string n_1;
+
+        Console.Write("Informe o seu sexo(M/F): ");
+        n_1 = Console.ReadLine();
+
+        if (n_1 == "M")
+        {
+            Console.WriteLine("Você é do sexo Masculino!");
+        }
+
+        if (n_1 == "F")
+        {
+            Console.WriteLine("Você é do sexo Feminino!");
+        }
+
+        else
+        {
+            Console.WriteLine("Sexo inválido!");
+        }
+
+
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_5()
+    {
+        /*
+         * 5. Elabore um algoritmo que leia dois números inteiros e mostre o resultado da diferença do maior valor pelo menor.
+         */
+
+
+        Console.WriteLine("5. Elabore um algoritmo que leia dois números inteiros e mostre o resultado da\ndiferença de maior valor pelo menor.\n\n");
+
+        //Declaração de Variáveis
+        int n_1, n_2, result_1;
+
+        Console.Write("Digite o primeiro valor: ");
+        n_1 = int.Parse(Console.ReadLine());
+
+        Console.Write("Digite o segundo valor: ");
+        n_2 = int.Parse(Console.ReadLine());
+
+        if (n_1 > n_2)
+        {
+            result_1 = (n_1 - n_2);
+            Console.WriteLine($"O resultado é {result_1}");
+        }
+        else
+        {
+            result_1 = (n_2 - n_1);
+            Console.WriteLine($"O resultado é {result_1}");
+        }
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_6()
+    {
+        /*
+         *   6. Ume empresa decide dar um aumento de 30% aos funcionários com salários inferiores a
+         *   R$ 500,00. Faça um programa que receba o salário do funcionário e mostre o valor do
+         *   salário reajustado ou uma mensagem, caso o funcionário não tenha direito ao aumento.
+         * 
+         */
+
+        Console.WriteLine("6. Ume empresa decide dar um aumento de 30% aos funcionários com salários inferiores a\nR$ 500, 00.Faça um programa que receba o salário do funcionário e mostre o valor do\nsalário reajustado ou uma mensagem, caso o funcionário não tenha direito ao aumento.\n\n");
+
+        //Declaração de Variáveis
+        double n_1, result_1;
+
+        Console.Write("Qual o valor do seu salário? ");
+        n_1 = double.Parse(Console.ReadLine());
+
+        if (n_1 < 500)
+        {
+            result_1 = ((n_1 * 0.3) + n_1);
+            Console.WriteLine($"Com o reajuste, seu salário atual é R${result_1}");
+        }
+        else
+        {
+            Console.WriteLine("Você não tem direito a esse aumento.");
+        }
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_7()
+    {
+        /*
+         * 7. Elabore um algoritmo para ler 4 notas de um aluno (de 1 a 10) e o sexo (M ou F) do aluno.
+            Após calcular a média das notas, apresentar a mensagem: Se for masculino, o resultado
+            deverá ser precedido de “Caro aluno, seu resultado é: “. Se for feminino, o resultado
+            deverá ser precedido de “Cara aluna, seu resultado é: “. Se o aluno tiver obtido média
+            maior ou igual a 6 está “Aprovado”, caso contrário, “Reprovado”.
+         */
+
+        Console.WriteLine("7. Elabore um algoritmo para ler 4 notas de um aluno (de 1 a 10) e o sexo (M ou F) do aluno.\nApós calcular a média das notas, apresentar a mensagem: Se for masculino, o resultado\ndeverá ser precedido de “Caro aluno, seu resultado é: “. Se for feminino, o resultado\ndeverá ser precedido de “Cara aluna, seu resultado é: “. Se o aluno tiver obtido média\nmaior ou igual a 6 está “Aprovado”, caso contrário, “Reprovado”.\n\n");
+
+        //Declaração de Variáveis
+        double n_1, n_2, n_3, n_4, result;
+        string name;
+
+        Console.Write("Digite a primeira nota: ");
+        n_1 = double.Parse(Console.ReadLine());
+
+        Console.Write("Digite a segunda nota: ");
+        n_2 = double.Parse(Console.ReadLine());
+
+        Console.Write("Digite a terceira nota: ");
+        n_3 = double.Parse(Console.ReadLine());
+
+        Console.Write("Digite a quarta nota: ");
+        n_4 = double.Parse(Console.ReadLine());
+
+        Console.Write("Digite o seu sexo(M/F): ");
+        name = Console.ReadLine();
+
+        result = ((n_1 + n_2 + n_3 + n_4) / 4);
+
+        if (name == "M" && result >= 6)
+        {
+            Console.WriteLine($"Caro aluno, seu resultado é: {result}.\nPortanto, você está aprovado!");
+        }
+        if (name == "F" && result >= 6)
+        {
+            Console.WriteLine($"Cara aluna, seu resultado é: {result}.\nPortanto, você está aprovada!");
+        }
+        if (name == "M" && result < 6)
+        {
+            Console.WriteLine($"Caro aluno, você está reprovado!");
+        }
+        if (name == "F" && result < 6)
+        {
+            Console.WriteLine($"Cara aluna, você está reprovada!");
+        }
+
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_8()
+    {
+        /*
+         * 8. A escola “APRENDER” faz o pagamento de seus professores por hora/aula. Faça um
+            algoritmo que calcule e exiba o salário de um professor. Sabe-se que o valor da hora/aula
+            segue a tabela abaixo:
+            a. Professor Nível 1 R$12,00 por hora/aula
+            b. Professor Nível 2 R$17,00 por hora/aula
+            c. Professor Nível 3 R$25,00 por hora/aula
+         */
+
+
+        Console.WriteLine("8. A escola “APRENDER” faz o pagamento de seus professores por hora/aula. Faça um\nalgoritmo que calcule e exiba o salário de um professor.Sabe - se que o valor da hora / aula\nsegue a tabela abaixo:\na.Professor Nível 1 R$12, 00 por hora / aula\nb.Professor Nível 2 R$17, 00 por hora / aula\nc.Professor Nível 3 R$25, 00 por hora / aula\n\n");
+
+        //Declaração de Variáveis
+        double result, v1, v2, v3, aula1;
+        string turma;
+
+        Console.Write("Qual turma você trabalha(Infantil, Fundamental ou Médio)? ");
+        turma = Console.ReadLine();
+
+        Console.Write("Quantas horas/aula você trabalhou? ");
+        aula1 = double.Parse(Console.ReadLine());
+
+        v1 = 12.00;
+        v2 = 17.00;
+        v3 = 25.00;
+
+        if (turma == "Infantil")
+        {
+            result = ((12.00 * aula1) * 26);
+            Console.WriteLine($"Você trabalha no ensino {turma}, \ne trabalhando {aula1}h/dia você vai receber R${result}");
+        }
+        if (turma == "Fundamental")
+        {
+            result = ((17.00 * aula1) * 26);
+            Console.WriteLine($"Você trabalha no ensino {turma}, \ne trabalhando {aula1}h/dia você vai receber R${result}");
+        }
+        if (turma == "Médio")
+        {
+            result = ((25.00 * aula1) * 26);
+            Console.WriteLine($"Você trabalha no ensino {turma}, \ne trabalhando {aula1}h/dia você vai receber R${result}");
+        }
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_9()
+    {
+        /*
+          9. Elabore um algoritmo que leia 5 valores inteiros e apresente na tela o maior e o menor
+          deles.
+        */
+
+        Console.WriteLine("9. Elabore um algoritmo que leia 5 valores inteiros e apresente na tela o maior e o menor deles.\n\n");
+
+        //Declaração de Variáveis
+        int ti, i;
+
+        Console.Write("Informe a quantidade: ");
+        ti = Convert.ToInt32(Console.ReadLine());
+        Double[] valores = new Double[ti];
+
+        for (i = 0; i < ti; i++)
+        {
+            Console.Write("Informe um número: ");
+            valores[i] = Convert.ToDouble(Console.ReadLine());
+        }
+
+        Array.Sort(valores);
+        int menor1 = valores.GetLowerBound(0);
+        int maior1 = valores.GetUpperBound(0);
+
+        Console.WriteLine("Menor : " + valores[menor1].ToString());
+        Console.WriteLine("Maior : " + valores[maior1].ToString());
+
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_10()
+    {
+        Console.WriteLine("10. Uma agência bancária possui dos tipos de investimentos, conforme o quadro a seguir. Faça\num algoritmo que receba o tipo de investimento e o valor do investimento e que calcule e\nmostre o valor corrigido de acordo com o tipo de investimento.\n\n");
+
+
+        int tipo = 0;
+        double valor = 0;
+
+
+
+        Console.WriteLine("TIPO     |       DESCRIÇÃO       |     RENDIMENTO");
+        Console.WriteLine("1        |       Poupança        |       3%      ");
+        Console.WriteLine("2        |  Fundo de renda fixa  |       4%      \n\n");
+        Console.WriteLine("Escolha seu tipo: ");
+        tipo = int.Parse(Console.ReadLine());
+        Console.WriteLine("Valor(R$): ");
+        valor = double.Parse(Console.ReadLine());
+
+        if (tipo == 1)
+        {
+            Console.WriteLine("Seu rendimento será de R${0} ao mês", valor * 0.03);
+        }
+        else if (tipo == 2)
+        {
+            Console.WriteLine("Seu rendimento será de R${0} ao mês", valor * 0.04);
+        }
+        else
+        {
+            Console.WriteLine("ERROR");
+        }
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_11()
+    {
+        /*
+            11. Faça um algoritmo que leia um número e mostre uma mensagem indicando se este
+            número é par ou ímpar e se é positivo ou negativo.
+         */
+
+
+        Console.WriteLine("11. Faça um algoritmo que leia um número e mostre uma mensagem indicando se este\nnúmero é par ou ímpar e se é positivo ou negativo.\n\n");
+
+        //Declaração de Variáveis
+        int n1;
+
+        Console.Write("Digite o número: ");
+        n1 = int.Parse(Console.ReadLine());
+
+        if (n1 % 2 == 0)
+        {
+            Console.WriteLine($"O número {n1} é par!");
+        }
+        else if (n1 % 2 == 1)
+        {
+            Console.WriteLine($"O número {n1} é ímpar!");
+        }
+        if (n1 < 0)
+        {
+            Console.WriteLine($"O número {n1} é negativo!");
+
+        }
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_12()
+    {
+
+        /*
+         Dados três valores X, Y e Z, verificar se eles podem ser os comprimentos dos lados de um
+            triângulo e, se forem verificar se é um triângulo equilátero, isósceles ou escalenos. Se eles
+            não formarem um triângulo, escrever a mensagem. Considere as seguintes propriedades:
+            a. O comprimento de cada lado em um triângulo é menor que a soma dos outros
+            dois lados;
+            b. Equiláteros: tem os comprimentos dos três lados iguais;
+            c. Isósceles: tem os comprimentos de dois lados iguais;
+            d. Escaleno: tem os comprimentos dos três lados diferentes.
+         */
+
+        Console.WriteLine("Dados três valores X, Y e Z, verificar se eles podem ser os comprimentos dos lados de um\ntriângulo e, se forem verificar se é um triângulo equilátero, isósceles ou escalenos.Se eles\nnão formarem um triângulo, escrever a mensagem.Considere as seguintes propriedades:\na.O comprimento de cada lado em um triângulo é menor que a soma dos outros\ndois lados;\n\n     b.Equiláteros: tem os comprimentos dos três lados iguais;     \nc.Isósceles: tem os comprimentos de dois lados iguais;     \nd.Escaleno: tem os comprimentos dos três lados diferentes.\n\n");
+
+
+        int x = 0;
+        int y = 0;
+        int z = 0;
+
+        Console.WriteLine("X: ");
+        x = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Y: ");
+        y = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Z: ");
+        z = int.Parse(Console.ReadLine());
+
+        Triangulo triangulo = new Triangulo()
+        {
+            x = x,
+            y = y,
+            z = z,
+
+        };
+
+        Console.WriteLine(triangulo.Calcular());
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_13()
+    {
+
+        /*13.Construa um algoritmo que calcule o peso ideal de uma pessoa. Dados de entrada: altura e
+        sexo.Fórmulas para cálculo do peso:
+        a.peso ideal de homem = (72, 7 x altura) -58
+        b.peso ideal da mulher = (62, 1 x altura) -44,7*/
+
+
+
+        Console.Write("13. Construa um algoritmo que calcule o peso ideal de uma pessoa.\n Dados de entrada: altura e sexo.Fórmulas para cálculo do peso:\na.peso ideal de homem = (72, 7 x altura) -58\nb.peso ideal da mulher = (62, 1 x altura) -44,7\n\n");
+
+        //Criacao da instancia da classe Pessoa
+        Pessoa peso_ideal = new Pessoa();
+        //Validacao de dados da variável sexo
+        while (true)
+        {
+            var aux = "";
+            Console.Write("Sexo da pessoa [M] MASCULINO  [F] FEMININO: ");
+            aux = Console.ReadLine();
+            if (aux.ToUpper() == "M")
+            {
+                peso_ideal.Sexo = "MASCULINO";
+                break;
+            }
+            else if (aux.ToUpper() == "F")
+            {
+                peso_ideal.Sexo = "FEMININO";
+                break;
+            }
+            else
+            {
+                Console.Write("Valor inválido!");
+            }
+        }
+        //Leitura da variável altura
+        Console.Write("Digite a altura da pessoa: ");
+        peso_ideal.Altura = double.Parse(Console.ReadLine());
+        //Resultado obtido
+        Console.Write("O peso ideal de uma pessoa do sexo {0} com {1} de altura é {2}.", peso_ideal.Sexo, peso_ideal.Altura, peso_ideal.Resultado);
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_14()
+    {
+        Console.WriteLine("14. Faça um programa que receba a idade de um nadador e mostre a sua categoria usando as\nregras a seguir:\nCategoria    Idade\nInfantil       5 a 7\nJuvenil        8 a 10\nAdolecente     11 a 15\nAdulto         16 a 30\nSênior         Acima de 30\n\n");
+
+        /* 14. Faça um programa que receba a idade de um nadador e mostre a sua categoria usando as
+	   regras a seguir:
+	   Categoria    Idade
+	   Infantil     5 a 7
+	   Juvenil      8 a 10
+	   Adolecente   11 a 15
+	   Adulto       16 a 30  
+	   Sênior       Acima de 30 */
+
+        var flag = 1;
+        do
+        {
+            //Leitura da idade do nadador
+            int idade = 0;
+            Console.Write("Digite a idade do nadador: ");
+            idade = int.Parse(Console.ReadLine());
+
+            //Saida de dados de acordo com a tabela
+            if (idade >= 5 && idade <= 7)
+            {
+                Console.WriteLine("A categoria do nadador é: Infantil! ");
+            }
+            else if (idade > 7 && idade <= 10)
+            {
+                Console.WriteLine("A categoria do nadador é: Juvenil! ");
+            }
+            else if (idade > 10 && idade <= 15)
+            {
+                Console.WriteLine("A categoria do nadador é: Adolecente! ");
+            }
+            else if (idade > 15 && idade <= 30)
+            {
+                Console.WriteLine("A categoria do nadador é: Adulto! ");
+            }
+            else if (idade > 30)
+            {
+                Console.WriteLine("A categoria do nadador é: Sênior! ");
+            }
+            else
+            {
+                Console.WriteLine("Dados inválidos!");
+            }
+
+            //Condicao de parada
+            Console.Write("Deseja repetir? [1] SIM [0] NÃO ");
+            flag = int.Parse(Console.ReadLine());
+        } while (flag != 0);
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_15()
+    {
+        /*
+            15. Num determinado Estado, para transferências de veículos, o DETRAN cobra uma taxa de
+            1% para carros fabricados antes de 1990 e uma taxa de 1.5% para os fabricados de 1990
+            em diante, taxa esta incidindo sobre o valor de tabela do carro. O algoritmo abaixo lê o
+            ano e o preço do carro e a seguir calcula e imprime imposto a ser pago. 
+         */
+        Console.WriteLine("15. Num determinado Estado, para transferências de veículos, o DETRAN cobra uma taxa de\n 1 % para carros fabricados antes de 1990 e uma taxa de 1.5 % para os fabricados de 1990\n em diante, taxa esta incidindo sobre o valor de tabela do carro.O algoritmo abaixo lê o\n ano e o preço do carro e a seguir calcula e imprime imposto a ser pago.\n\n");
+
+
+        int ano = 0;
+        double preco = 0, imposto = 0;
+
+        //Leitura do ano do carro
+        Console.Write("Qual o ano do carro? ");
+        ano = int.Parse(Console.ReadLine());
+
+        //Valor do carro
+        Console.Write("Qual o preço do carro na tabela FIPE? R$");
+        preco = double.Parse(Console.ReadLine());
+
+        //Calculo do imposto
+        if (ano < 1990)
+        {
+            imposto = preco * 0.01;
+        }
+        else if (ano >= 1990)
+        {
+            imposto = preco * 0.015;
+        }
+
+        //Saida do resultado obtido
+        Console.Write("O valor do imposto cobrado para mudar um veículo do ano de {0} que custa {1} de nome é de {2}.", ano, preco, imposto);
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_16()
+    {
+        /* 16. Uma empresa concederá um aumento de salário aos seus funcionários, variável de acordo
+		com o cargo, conforme a tabela abaixo. Faça um algoritmo que leia o salário e o cargo de
+		um funcionário e calcule o novo salário. Se o cargo do funcionário não estiver na tabela,
+		ele deverá, então, receber 40% de aumento. Mostre o salário antigo, o novo salário e a
+		diferença.
+		Código		Cargo		Percentual
+		101		Gerente		10%
+		102		Engenheiro	20%
+		103		Técnico		30% */
+
+
+        Console.WriteLine("16. Uma empresa concederá um aumento de salário aos seus funcionários, variável de acordo\ncom o cargo, conforme a tabela abaixo.Faça um algoritmo que leia o salário e o cargo de\num funcionário e calcule o novo salário.Se o cargo do funcionário não estiver na tabela,\nele deverá, então, receber 40 % de aumento.Mostre o salário antigo, o novo salário e a diferença.\n\n\nCódigo Cargo       Percentual\n\n101     Gerente     10 %\n102     Engenheiro  20 %\n103     Técnico     30 %\n104     Outros      40 %\n\n");
+
+        var salario = 0.0;
+        var novo_salario = 0.0;
+        var cargo = "";
+
+        //Leitura do salário de um funcionário
+        Console.Write("Salário do funcionário: R$");
+        salario = double.Parse(Console.ReadLine());
+
+        //Leitura do cargo do funcionário
+        Console.WriteLine("Código	 | Cargo         |   Percentual");
+        Console.WriteLine(" 101     | Gerente       |   10%");
+        Console.WriteLine(" 102     | Engenheiro    |   20%");
+        Console.WriteLine(" 103     | Técnico       |   30%");
+        Console.WriteLine(" 104     | Outros        |   40%");
+        Console.Write("Cargo: ");
+        cargo = Console.ReadLine();
+
+        //Calculo do salario
+        if (cargo == "101" || cargo.ToUpper() == "GERENTE")
+        {
+            novo_salario = salario + salario * 0.10;
+        }
+        else if (cargo == "102" || cargo.ToUpper() == "ENGENHEIRO")
+        {
+            novo_salario = salario + salario * 0.20;
+        }
+        else if (cargo == "103" || cargo.ToUpper() == "TECNICO")
+        {
+            novo_salario = salario + salario * 0.30;
+        }
+        else if (cargo == "104" || cargo.ToUpper() == "OUTROS")
+        {
+            novo_salario = salario + salario * 0.40;
+        }
+
+        //Saida do resultado obtido
+        Console.Write("Um funcionário que recebia {0} terá um aumento de {1} e passará a receber {2}.", salario, novo_salario - salario, novo_salario);
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_17()
+    {
+        /* 17. Um banco concederá um crédito especial aos seus clientes, variável com o saldo médio no
+		último ano. Faça um algoritmo que leia o saldo médio de um cliente e calcule o valor do
+		crédito de acordo com a tabela abaixo. Mostre uma mensagem informando o saldo médio
+		e o valor do crédito.
+		Saldo médio		    Percentual
+		de 0 a 200	  	nenhum crédito
+		de 201 a 400		     20%
+		de 401 a 600		     30%
+		acima de 601		     40% */
+
+        Console.WriteLine("17. Um banco concederá um crédito especial aos seus clientes, variável com o saldo médio no\núltimo ano.Faça um algoritmo que leia o saldo médio de um cliente e calcule o valor do\ncrédito de acordo com a tabela abaixo. Mostre uma mensagem informando o saldo médio\ne o valor do crédito.\n\nSaldo médio     Percentual\nde 0 a 200      nenhum crédito\nde 201 a 400             20 %\nde 401 a 600             30 %\nacima de 601             40 %\n\n");
+
+
+        //Instancia da classe
+        Banco credito = new Banco();
+
+        //Leitura do saldo médio do cliente
+        Console.Write("Saldo médio do cliente: R$");
+        credito.Saldo = double.Parse(Console.ReadLine());
+
+        //Saida do resultado obtido
+        Console.Write("Um cliente com um saldo médio de {0} receberá {1} de crédito.", credito.Saldo, credito.Credito);
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_18()
+    {
+        /*
+         18. Criar um programa para identificar o valor a ser pago por um plano de saúde dada a idade
+         do conveniado considerando que todos pagam R$ 100 mais um adicional conforme a
+         seguinte tabela: 1) crianças com menos de 10 anos pagam R$80; 2) conveniados com idade
+         entre 10 e 30 anos pagam R$50; 3) conveniados com idade entre 40 e 60 anos pagam R$
+         95; e 4) conveniados com mais de 60 anos pagam R$130. 
+         */
+
+        Console.WriteLine("18. Criar um programa para identificar o valor a ser pago por um plano de saúde dada a idade\ndo conveniado considerando que todos pagam R$ 100 mais um adicional conforme a\nseguinte tabela:\n\n1) crianças com menos de 10 anos pagam R$80;\n2) conveniados com idade entre 10 e 30 anos pagam R$50;\n3) conveniados com idade entre 40 e 60 anos pagam R$95;\n4) conveniados com mais de 60 anos pagam R$130.\n\n");
+
+
+        int idade = 0, valor = 100;
+
+        //Validacao da idade digitada
+        while (true)
+        {
+            Console.Write("Idade do conveniado: ");
+            idade = int.Parse(Console.ReadLine());
+            if (idade > 0)
+            {
+                break;
+            }
+            Console.WriteLine("Valor inválido!");
+        }
+
+        //Calculo do valor do convenio
+        if (idade >= 0 && idade <= 9)
+        {
+            valor += 80;
+        }
+        else if (idade >= 10 && idade <= 30)
+        {
+            valor += 50;
+        }
+        else if (idade >= 40 && idade <= 60)
+        {
+            valor += 95;
+        }
+        else if (idade > 60)
+        {
+            valor += 130;
+        }
+
+        //Saida do resultado obtido
+        Console.Write("Um conveniado de {0} anos de idade pagará uma mensalidade de {1} em seu plano de saúde.", idade, valor);
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_19()
+    {
+
+        /* 19. O cardápio de uma lanchonete é o seguinte:
+			Código        Descrição         Preço
+				100       Cachorro Quente     R$1,10
+				101       Bauru Simples       R$1,30
+				102       Bauru c/ovo         R$1,50
+				103       Hamburguer          R$1,10
+				104       Chesseburguer       R$1,30
+				105       Refrigerante        R$1,00
+		Escrever um algoritmo que leia o código do item pedido, a quantidade e calcule o valor a
+		ser pago por aquele lanche. Considere que a cada execução somente será calculado um
+		item. */
+
+        Console.WriteLine("19.Escrever um algoritmo que leia o código do item pedido, a quantidade e calcule o valor a\nser pago por aquele lanche. Considere que a cada execução somente será calculado um item.\n\n");
+
+        while (true)
+        {
+            var codigo = 0;
+            var quantidade = 0;
+            var valor = 0.0;
+            var flag = 1;
+
+            Console.WriteLine("            Lanchonete IPESU          ");
+            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("Código        Descrição         Preço");
+            Console.WriteLine(" 100       Cachorro Quente     R$1,10");
+            Console.WriteLine(" 101       Bauru Simples       R$1,30");
+            Console.WriteLine(" 102       Bauru c/ovo         R$1,50");
+            Console.WriteLine(" 103       Hamburguer          R$1,10");
+            Console.WriteLine(" 104       Chesseburguer       R$1,30");
+            Console.WriteLine(" 105       Refrigerante        R$1,00");
+            Console.WriteLine("--------------------------------------");
+            //Tratamento do valor digitado
+            while (true)
+            {
+                Console.Write("Sua escolha [Código]: ");
+                codigo = int.Parse(Console.ReadLine());
+                if (codigo == 100 || codigo == 101 || codigo == 102 || codigo == 103 || codigo == 104 || codigo == 105)
+                {
+                    break;
+                }
+            }
+            //Processamento do valor
+            if (codigo == 100)
+            {
+                valor = 1.10;
+            }
+            else if (codigo == 101)
+            {
+                valor = 1.30;
+            }
+            else if (codigo == 102)
+            {
+                valor = 1.50;
+            }
+            else if (codigo == 103)
+            {
+                valor = 1.10;
+            }
+            else if (codigo == 104)
+            {
+                valor = 1.30;
+            }
+            else if (codigo == 105)
+            {
+                valor = 1;
+            }
+
+            //Processamento da quantidade do pedido
+            Console.Write("Quantidade: ");
+            quantidade = int.Parse(Console.ReadLine());
+
+            //Saida do resultado
+            Console.WriteLine("O valor do pedido será {0:c}. ", valor * quantidade);
+            Console.WriteLine("--------------------------------------");
+
+            //Condicao de parada
+            do
+            {
+                Console.Write("Deseja pedir novamente? [1] SIM [0] NÃO ");
+                flag = int.Parse(Console.ReadLine());
+                if (flag == 0 || flag == 1)
+                {
+                    break;
+                }
+
+            } while (true);
+            Console.WriteLine("--------------------------------------");
+            if (flag == 0)
+            {
+                Console.ReadLine();
+                Main();
+            }
+
+        }
+
+    }
+    public static void Questao_20()
+    {
+
+        /*
+            Crie um programa em c# que leia um vetor de 10 números inteiros e gere um segundo
+            vetor (que deve ser impresso), cujas posições pares são o dobro do vetor original e as
+            ímpares são o triplo. 
+         */
+
+        Console.WriteLine("Crie um programa em c# que leia um vetor de 10 números inteiros e gere um segundo\nvetor(que deve ser impresso), cujas posições pares são o dobro do vetor original e as\nímpares são o triplo.\n\n");
+
+
+        int[] vetor = new int[10];
+
+        //Lendo os 10 primeiros números.
+        Console.WriteLine("Digite 10 números inteiros em sequencia: ");
+        for (var i = 0; i < 10; i++)
+            vetor[i] = int.Parse(Console.ReadLine());
+
+        //Criando novo vetor e adicionando novos valores
+        int[] novo_vetor = new int[10];
+        var contador = 0;
+        foreach (int iten in vetor)
+        {
+            if (iten % 2 == 0)
+            {
+                novo_vetor[contador] = (iten * 2);
+            }
+            else
+            {
+                novo_vetor[contador] = (iten * 3);
+            }
+            contador++;
+        }
+        //Escrevendo resultado obtido.
+        Console.WriteLine("O resultado do novo vetor é: ");
+        foreach (int iten in novo_vetor)
+            Console.Write(iten + " ");
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_21()
+    {
+        /*
+         21. Crie um programa em c# que leia um vetor de 10 alturas e elabore um algoritmo que
+        permita calcular:
+        A. A média das alturas;
+        B. O desvio padrão das alturas. Lembrando que desvio padrão é dado por
+        (Somatório(Alturas2)/número de alturas) Média2;
+        C. A moda das alturas. Lembrando que moda é o valor que maior incidência de
+        repetições;     
+         */
+
+        Console.WriteLine("21. Crie um programa em c# que leia um vetor de 10 alturas e elabore um algoritmo que\npermita calcular:\n\nA. A média das alturas;\nB. O desvio padrão das alturas. Lembrando que desvio padrão é dado por(Somatório(Alturas2) / número de alturas) Média2;\nC. A moda das alturas. Lembrando que moda é o valor que maior incidência de repetições; \n\n");
+
+        double[] vetor = new double[10];
+
+        //Leitura das alturas
+        for (var i = 0; i <= 9; i++)
+        {
+            Console.Write("Digite a {0}ª Altura: ", i + 1);
+            vetor[i] = double.Parse(Console.ReadLine());
+        }
+
+        //Calculo da media
+        var media = 0;
+        foreach (int iten in vetor)
+        {
+            media += iten;
+        }
+        media = media / 10;
+
+        //Saida do valor calculado da media
+        Console.WriteLine("\nMédia das altura calculadas: {0}. ", media);
+
+        //Calculo do desvio padrao
+        var desvio = 0.0;
+        var somatorio = 0.0;
+        foreach (int iten in vetor)
+        {
+            somatorio += Math.Pow((iten), 2);
+        }
+        desvio = (somatorio / 10) - Math.Pow(media, 2);
+
+        //Saida do valor calculado do desvio padrao
+        Console.WriteLine("Desvio padrâo das altura calculadas: {0:n2}. ", desvio);
+
+        //Adicionando numeros repetidos em uma lista.
+        HashSet<int> moda = new HashSet<int>();
+
+        var contador = 0;
+
+        foreach (int iten in vetor)
+        {
+            foreach (int iten2 in vetor)
+            {
+                if (iten == iten2)
+                {
+                    contador++;
+                    if (contador > 1)
+                    {
+                        moda.Add(iten);
+                    }
+                }
+            }
+            contador = 0;
+        }
+
+        //Saida do resultado obtido 
+        if (moda.Count != 0)
+        {
+            Console.Write("Os números moda são: ");
+            foreach (int item in moda)
+            {
+                Console.Write(item + " ");
+            }
+        }
+        else
+        {
+            Console.Write("Nenhum número é uma moda no conjunto.");
+        }
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_22()
+    {
+
+        /*
+         * Construa um programa em c# que leia 2 vetores inteiros de 5 posições e apresente o
+        conjunto União e o conjunto Intersecção dos vetores.
+        */
+
+        Console.WriteLine("22. Construa um programa em c# que leia 2 vetores inteiros de 5 posições e apresente o\nconjunto União e o conjunto Intersecção dos vetores.\n\n");
+
+        int[] vetor1 = new int[5];
+        int[] vetor2 = new int[5];
+
+        //Leitura do primeiro vetor
+        for (var i = 0; i < 5; i++)
+        {
+            Console.Write("Digite o {0}ª valor da primeira lista: ", i + 1);
+            vetor1[i] = int.Parse(Console.ReadLine());
+
+        }
+
+        //Leitura do segundo vetor
+        for (var i = 0; i < 5; i++)
+        {
+            Console.Write("Digite o {0}ª valor da segunda lista: ", i + 1);
+            vetor2[i] = int.Parse(Console.ReadLine());
+        }
+
+        //Uniao entre os dois vetores
+        List<int> uniao = new List<int>();
+
+        foreach (int valor in vetor1)
+        {
+            uniao.Add(valor);
+        }
+
+        foreach (int valor in vetor2)
+        {
+            uniao.Add(valor);
+        }
+
+        //Resultado da uniao entre os dois vetores
+        Console.Write("A uniao dos vetores 1 e 2 é: ");
+
+        foreach (int valor in uniao)
+        {
+            Console.Write(valor + " ");
+        }
+        Console.WriteLine();
+
+        //interseccao dos vetores
+        HashSet<int> interseccao = new HashSet<int>();
+
+        foreach (int valor in vetor1)
+        {
+            foreach (int valor2 in vetor2)
+            {
+                if (valor == valor2 && interseccao.Contains(valor) == false)
+                {
+                    interseccao.Add(valor);
+                }
+            }
+        }
+        //Resultado da interseccao dos vetores
+        Console.Write("A intersecçâo dos vetores 1 e 2 é: ");
+
+        foreach (int valor in interseccao)
+        {
+            Console.Write(valor + " ");
+        }
+        Console.ReadLine();
+        Main();
+
+    }
+    public static void Questao_23()
+    {
+
+        /*
+          Faça um programa que leia um vetor de 10 posições e crie um segundo vetor substituindo
+          os valores negativos por 1.
+         */
+
+        Console.WriteLine("Faça um programa que leia um vetor de 10 posições e crie um segundo vetor substituindo\nos valores negativos por 1.\n\n");
+
+        //Lendo primeiro vetor
+        int[] vetor = new int[10];
+        for (var i = 0; i < 10; i++)
+        {
+            Console.Write("Adicione o {0}º valor ao vetor: ", i + 1);
+            vetor[i] = int.Parse(Console.ReadLine());
+        }
+
+        //Construindo segundo vetor
+        int[] vetor2 = new int[10];
+        foreach (int valor in vetor)
+        {
+            if (valor < 0)
+            {
+                vetor2[Array.IndexOf(vetor, valor)] = 1;
+            }
+            else
+            {
+                vetor2[Array.IndexOf(vetor, valor)] = valor;
+            }
+        }
+
+        //Resultado do primeiro vetor
+        Console.Write("Primeiro vetor: ");
+        foreach (int valor in vetor)
+        {
+            Console.Write(valor + " ");
+        }
+        Console.WriteLine();
+
+        //Resultado do segundo vetor
+        Console.Write("Segundo vetor: ");
+        foreach (int valor in vetor2)
+        {
+            Console.Write(valor + " ");
+        }
+        Console.ReadLine();
+        Main();
+
+    }
+    public static void Questao_24()
+    {
+
+        /*
+          24. Faça um programa que leia uma matriz mat 3 x 4 de inteiros, substitua seus elementos
+          negativos por 0 e imprima a matriz mat original e a modificada.
+         */
+
+        Console.WriteLine("24. Faça um programa que leia uma matriz mat 3 x 4 de inteiros, substitua seus elementos\nnegativos por 0 e imprima a matriz mat original e a modificada.\n\n");
+
+        //Leitura da matriz
+        int[,] mat = new int[3, 4];
+
+        for (var y = 0; y < 3; y++)
+        {
+            for (var x = 0; x < 4; x++)
+            {
+                Console.Write("Digite o valor para Linha {0} Coluna {1}: ", y + 1, x + 1);
+                var aux = 0;
+                aux = int.Parse(Console.ReadLine());
+                if (aux < 0)
+                {
+                    mat[y, x] = 0;
+                }
+                else
+                {
+                    mat[y, x] = aux;
+                }
+            }
+        }
+        //Saida da matriz obtida
+        Console.WriteLine("A matriz será: ");
+        for (var y = 0; y < 3; y++)
+        {
+            Console.WriteLine();
+            for (var x = 0; x < 4; x++)
+            {
+                Console.Write(mat[y, x] + " ");
+            }
+
+        }
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_25()
+    {
+        double[] notas = new double[10];
+
+        double media = 0;
+
+        //Leitura das notas de cada aluno
+        for (var i = 0; i < 10; i++)
+        {
+            Console.Write("Digite a nota do {0}º Aluno [0 a 10]: ", i + 1);
+            notas[i] = double.Parse(Console.ReadLine());
+            media += notas[i];
+        }
+        //Dividindo o total de notas por 10 para pegar a média aritmética
+        media = media / 10;
+
+        //Computando quantos alunos tiraram a nota acima da média
+        var contador = 0;
+        foreach (double nota in notas)
+        {
+            if (nota > media)
+            {
+                contador++;
+            }
+        }
+        //Saida do resultado obtido
+        Console.Write("A média de nota dos 10 alunos foi {0}, {1} alunos tiraram a nota acima da média da turma.", media, contador);
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_26()
+    {
+        string[] produtos = new string[5];
+        Double[] valores = new Double[5];
+        int A = 0;
+        List<string> B = new List<string>();
+        Double[] C = new Double[2];
+
+        for (int i = 0; i <= 4; i++)
+        {
+            Console.WriteLine("DIGITE O {0}º PRODUTO: ", i + 1);
+            produtos[i] = Console.ReadLine();
+
+            Console.WriteLine("\nPREÇO: ");
+            valores[i] = Convert.ToDouble(Console.ReadLine());
+            Console.Clear();
+        }
+        for (int b = 1; b <= 4; b++)
+        {
+            if (valores[b] < 50.0)
+            {
+                A += 1;
+            }
+
+            else if (valores[b] > 50.0 && valores[b] < 100.0)
+            {
+                B.Add(produtos[b]);
+            }
+
+            else if (valores[b] > 100.0)
+            {
+                C[0] += 1;
+                C[1] += valores[b];
+            }
+        }
+
+
+        Console.WriteLine("A. A quantidade de produtos com preço inferior a R$ 50,00: {0}", A);
+        Console.WriteLine("B. O nome dos produtos com preço entre R$ 50,00 e R$100,00: \n");
+        foreach (string itens in B)
+        {
+            Console.WriteLine("		{0} ", itens);
+        }
+        Console.WriteLine("\nC. A média dos preços dos produtos com preço superior a R$ 100,00: {0}", C[1] / C[0]);
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_27()
+    {
+        int[] A = new int[6] { 6, 26, 34, 15, 55, 2 };
+        int[] B = new int[10] { 5, 26, 34, 15, 55, 2, 20, 13, 59, 45 };
+        int P = 0;
+
+        for (int x = 0; x <= 5; x++)
+        {
+            for (int y = 0; y <= 9; y++)
+            {
+                if (A[x] == B[y])
+                {
+                    P += 1;
+                }
+            }
+        }
+
+        if (P == 4)
+        {
+            Console.WriteLine("Parabens! Você fez uma Quadra!");
+        }
+
+        else if (P == 5)
+        {
+            Console.WriteLine("Parabens! Você fez uma Quina!");
+        }
+        else if (P == 6)
+        {
+            Console.WriteLine("Parabens! Você fez uma SENA!!!!");
+        }
+
+        else { Console.WriteLine("Você não acertou, tente outra vez!"); }
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_28()
+    {
+        int[] E = new int[10] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        int[] D = new int[10];
+        string E_string = "";
+        string D_string = "";
+
+        for (int i = 1; i < 10; i++)
+        {
+            D[i - 1] = E[E.Length - i];
+        }
+
+        for (int z = 0; z < 10; z++)
+        {
+            E_string += String.Format(Convert.ToString(E[z]) + "-");
+            D_string += String.Format(Convert.ToString(D[z]) + "-");
+        }
+
+        Console.WriteLine("Matriz E :" + E_string);
+        Console.WriteLine("Matriz D :" + D_string);
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_29()
+    {
+        int[] X = new int[10] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        int[] Y = new int[10];
+
+        for (int i = 0; i < 10; i++)
+        {
+            if (i % 2 == 0)
+            {
+                Y[i] = (X[i]) / 2;
+            }
+            else
+            {
+                Y[i] = (X[i]) * 2;
+            }
+
+
+            Console.WriteLine("INDICE [{1}] X:{0} ", X[i], i);
+            Console.WriteLine("INDICE [{1}] X:{0} ", Y[i], i);
+
+        }
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_30()
+    {
+        Console.Clear();
+        string[] nome = new string[6] { "Uva", "Banana", "Maçã", "Melancia", "Maracuja", "Acerola" };
+        int[] qtd = new int[6] { 100, 100, 100, 100, 100, 100 };
+        int[] qtd_vendida = new int[6] { 0, 0, 0, 0, 0, 0 };
+        int[] min = new int[6] { 10, 10, 10, 10, 10, 10 };
+        double[] valor = new double[6] { 2.50, 3.00, 4.00, 5.00, 6.00, 9.00 };
+        double[] valor_vendido = new double[6] { 0.00, 0.00, 0.00, 0.00, 0.00, 0.00 };
+        int compra_indice = 0;
+        int compra_quantidade = 0;
+
+
+
+        while (true)
+        {
+
+            for (int i = 0; i <= 5; i++)
+            {
+                Console.WriteLine(" [{3}] {2} - {1}                  {0}", nome[i], qtd[i], valor[i].ToString("C"), i + 1);
+            }
+            try
+            {
+                Console.WriteLine("\nPRODUTO:");
+                compra_indice = Convert.ToInt32(Console.ReadLine());
+
+                if (compra_indice == 0)
+                {
+                    break;
+                }
+
+                Console.WriteLine("QUANTIDADE: ");
+                compra_quantidade = Convert.ToInt32(Console.ReadLine());
+
+                if (qtd[compra_indice - 1] <= 0 || compra_quantidade > qtd[compra_indice - 1])
+                {
+                    Console.WriteLine("\n\nA COMPRA NÂO PODE SER FEITA \n VALOR DO ESTOQUE ZERADO \n\n");
+                }
+
+                else
+                {
+                    qtd[compra_indice - 1] -= compra_quantidade;
+                    qtd_vendida[compra_indice - 1] += compra_quantidade;
+                    valor_vendido[compra_indice - 1] = compra_quantidade * valor[compra_indice - 1];
+
+                    Console.WriteLine("\n\nVENDIDO!\n{0}x de {1}\n\n", compra_quantidade, nome[compra_indice - 1]);
+                }
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine("\n\nERROR\n\nINDICE ERRADO\n\n");
+                //break;
+            }
+
+        }
+        Console.Clear();
+        Console.WriteLine("\n\n\nCAIXA\n\n");
+        for (int i = 0; i <= 5; i++)
+        {
+
+            Console.WriteLine("[{0}]{1}", i + 1, nome[i]);
+            Console.WriteLine("Vendido: {0} : {1} ", qtd_vendida[i], valor_vendido[i].ToString("C"));
+        }
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_31()
+    {
+        //nao e possivel excluir itens de vetores
+
+
+
+        int[] vetor = new int[10] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        int remove_num;
+        Console.WriteLine("0,1,2,3,4,5,6,7,8,9\n");
+        while (true)
+        {
+
+            Console.WriteLine("\n\nEXCLUIR: ");
+            remove_num = Convert.ToInt32(Console.ReadLine());
+
+            for (int x = 0; x <= 9; x++)
+            {
+                if (vetor[x] == remove_num)
+                {
+                    vetor[x] = -1;
+                }
+            }
+            Console.WriteLine();
+            for (int i = 0; i <= 9; i++)
+            {
+                if (vetor[i] >= 0)
+                {
+                    Console.Write("{0} ", vetor[i]);
+                }
+            }
+
+        }
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_32()
+    {
+        int A = 0;
+        int B = 0;
+        int C = 0;
+
+        int[,] matrix = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
+
+
+        for (int x = 0; x <= 3; x++)
+        {
+            A += matrix[2, x];
+            for (int y = 0; y <= 3; y++)
+            {
+                C += matrix[x, y];
+                if (y == 1)
+                {
+                    B += matrix[x, 1];
+                }
+            }
+        }
+
+        Console.WriteLine("A: {0}", A);
+        Console.WriteLine("B: {0}", B);
+        Console.WriteLine("C: {0}", C);
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_33()
+    {
+        double[] manha = new double[5];
+        double[] tarde = new double[5];
+        string[] dia = new string[5] { "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA" };
+        double[] maior_manha = new double[2];
+        double[] maior_tarde = new double[2];
+        int turno = 0;
+
+        for (int i = 0; i <= 4; i++)
+        {
+            Console.Clear();
+            Console.WriteLine("DIA: {0}\n\n----FATURAMENTO TOTAL----", dia[i]);
+            Console.WriteLine("MANHÂ: ");
+            manha[i] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("TARDE: ");
+            tarde[i] = Convert.ToDouble(Console.ReadLine());
+        }
+
+
+        for (int x = 0; x <= 4; x++)
+        {
+            if (manha[x] > maior_manha[0])
+            {
+                maior_manha[0] = manha[x];
+                maior_manha[1] = x;
+            }
+            if (tarde[x] > maior_tarde[0])
+            {
+                maior_tarde[0] = tarde[x];
+                maior_tarde[1] = x;
+            }
+
+        }
+
+        if (maior_manha[0] > maior_tarde[0])
+        {
+            Console.WriteLine("\n\nMAIOR RENDIMENTO\n\nDIA: {0}\nTURNO: {1}\nVALOR: {2}", dia[Convert.ToInt32(maior_manha[1])], "MANHÂ", maior_manha[0]);
+        }
+        else
+        {
+            Console.WriteLine("\n\nMAIOR RENDIMENTO\n\nDIA: {0}\nTURNO: {1}\nVALOR: {2}", dia[Convert.ToInt32(maior_tarde[1])], "TARDE", maior_tarde[0]);
+        }
+
+
+        Console.ReadLine();
+        Main();
+
+
+    }
+    public static void Questao_34()
+    {
+        string name = "";
+        int position = 0;
+
+        List<string> participantes = new List<string>();
+        List<double> tamanhos = new List<double>();
+
+
+        while (true)
+        {
+            Console.Clear();
+
+            Console.WriteLine(".....::::::CONCURSO:::::.....");
+
+            Console.WriteLine("Nome: ");
+            name = Console.ReadLine();
+            if (name == "SAIR") { break; }
+            participantes.Add(name);
+            Console.WriteLine("Altura: ");
+            tamanhos.Add(Convert.ToDouble(Console.ReadLine()));
+
+        }
+
+        for (int i = 0; i < participantes.Count; i++)
+        {
+            if (tamanhos[i] > position)
+            {
+                position = i;
+            }
+
+        }
+
+        Console.WriteLine("\nVENCEDORA: {0}\nALTURA: {1}cm", participantes[position], tamanhos[position]);
+        Console.WriteLine("\n\n\nPressione qualquer tecla para sair...");
+        Console.ReadKey();
+
+
+        Console.ReadLine();
+        Main();
+    }
+    public static void Questao_35()
+    {
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine("....::::PERIMETRO DO TRIANGULO::::....\n");
+            double x = 0;
+            double y = 0;
+            double z = 0;
+
+            Console.WriteLine("X: ");
+            x = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Y: ");
+            y = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("z: ");
+            z = Convert.ToDouble(Console.ReadLine());
+
+            if (x > y + z || y > x + z || z > x + y)
+            {
+                Console.WriteLine("\nVALORES INVÁLIDOS");
+                break;
+            }
+
+            else
+            {
+                Console.WriteLine("PERIMETRO: {0}", x + y + z);
+                Console.ReadLine();
+            }
+
+
+            Console.ReadLine();
+            Main();
+        }
+
+    }
+
+
+    public class Triangulo
+        { 
+        
+        public int x { get; set; }
+        public int y { get; set; }
+        public int z { get; set; }
+
+
+
+        public string Calcular()
+        {
+            if (x > y + z || y > x + z || z > x + y)
+            {
+                return ("VALORES INVÁLIDOS");
+            }
+
+            if (x == y && x == z && z == y)
+            {
+                return ("TRIÂNGULO VÁLIDO\nTIPO : EQUILÁTERO");
+            }
+
+            if (x != y && x == z && z == y || x == y && x != z && z == y || x == y && x == z && z != y)
+            {
+                return ("TRIÂNGULO VÁLIDO\nTIPO : ISÓCELES");
+            }
+            if (x != y && x != z && z != y )
+            {
+                return ("TRIÂNGULO VÁLIDO\nTIPO : ESCALENO");
+            }
+
+            return "";
+        }
+
+    }
+
+
+
+
+    class Pessoa
+    {
+        //Variáveis privadas da classe
+        private string sexo;
+        private double altura;
+        private double resultado(string sexo, double altura)
+        {
+            if (sexo == "MASCULINO")
+            {
+                return (72.7 * altura) - 58;
+            }
+            else
+            {
+                return (62.1 * altura) - 44.7;
+            }
+        }
+        //Atributos da classe.
+        public string Sexo
+        {
+            get { return sexo; }
+            set { sexo = value; }
+        }
+        public double Altura
+        {
+            get { return altura; }
+            set { altura = value; }
+        }
+        public double Resultado
+        {
+            get { return resultado(sexo, altura); }
+        }
+    }
+
+    class Banco
+    {
+        //Variáveis privadas da classe
+        private double credito;
+        private double saldo;
+        private double resultado()
+        {
+            if (saldo >= 0 && saldo <= 200)
+            {
+                credito = 0;
+            }
+            else if (saldo >= 201 && saldo <= 400)
+            {
+                credito = saldo * 0.20;
+            }
+            else if (saldo >= 401 && saldo <= 600)
+            {
+                credito = saldo * 0.30;
+            }
+            else if (saldo > 600)
+            {
+                credito = saldo * 0.40;
+            }
+            return credito;
+        }
+
+        //Atributos da classe Banco
+        public double Saldo
+        {
+            get { return saldo; }
+            set { saldo = value; }
+        }
+        public double Credito
+        {
+            get { return resultado(); }
+        }
+    }
+}
+
